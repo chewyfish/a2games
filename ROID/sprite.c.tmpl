@@ -1,0 +1,77 @@
+#ifndef __SPRITE_C__
+#define __SPRITE_C__ 1
+
+#include "sprite.h"
+
+// Spaceship sprites
+// - SPRITE_SHIP_BITMAP[X,Y,Z]: X - shape (by rotation), Y - shifted bitmap, Z - bitmap bytes
+
+const unsigned char SPRITE_SHIP_BITMAP[SPRITE_SHIP_NUMSHAPES][SPRITE_SHIP_NUMBITMAPSHIFTS][SPRITE_SHIP_NUMBITMAPBYTES] = {
+__PH_SPRITE_BITMAP_SHIP__
+};
+
+// Bullet sprite
+// - SPRITE_BULLET_BITMAP[X,Y]: X - shifted bitmap, Y - bitmap bytes
+
+const unsigned char SPRITE_BULLET_BITMAP[SPRITE_BULLET_NUMBITMAPSHIFTS][SPRITE_BULLET_NUMBITMAPBYTES] = {
+{ 0x01 },
+{ 0x02 },
+{ 0x04 },
+{ 0x08 },
+{ 0x10 },
+{ 0x20 },
+{ 0x40 },
+};
+
+// Asteroid sprites
+// - SPRITE_ROID_SMALL_BITMAP[X,Y,Z]: X - shape (small1,small2), Y - shifted bitmap, Z - bitmap bytes
+// - SPRITE_ROID_MEDIUM_BITMAP[X,Y,Z]: X - shape (medium1,medium1), Y - shifted bitmap, Z - bitmap bytes
+// - SPRITE_ROID_LARGE_BITMAP[X,Y,Z]: X - shape (large1), Y - shifted bitmap, Z - bitmap bytes
+
+const unsigned char SPRITE_ROID_SMALL_BITMAP[SPRITE_ROID_SMALL_NUMSHAPES][SPRITE_ROID_NUMBITMAPSHIFTS][SPRITE_ROID_SMALL_NUMBITMAPBYTES] = {
+__PH_SPRITE_BITMAP_ROID_SMALL__
+};
+
+const unsigned char SPRITE_ROID_MEDIUM_BITMAP[SPRITE_ROID_MEDIUM_NUMSHAPES][SPRITE_ROID_NUMBITMAPSHIFTS][SPRITE_ROID_MEDIUM_NUMBITMAPBYTES] = {
+__PH_SPRITE_BITMAP_ROID_MEDIUM__
+};
+
+#pragma rodata-name("RODATA1")
+const unsigned char SPRITE_ROID_LARGE_BITMAP[SPRITE_ROID_LARGE_NUMSHAPES][SPRITE_ROID_NUMBITMAPSHIFTS][SPRITE_ROID_LARGE_NUMBITMAPBYTES] = {
+__PH_SPRITE_BITMAP_ROID_LARGE__
+};
+
+// Icon sprites
+// - SPRITE_ICON_BITMAP[X,Y,Z]: X - shape (time, shiield, asteroid), Y - shifted bitmap, Z - bitmap bytes
+
+#pragma rodata-name("RODATA1")
+const unsigned char SPRITE_ICON_BITMAP[SPRITE_ICON_NUMSHAPES][SPRITE_ICON_NUMBITMAPSHIFTS][SPRITE_ICON_NUMBITMAPBYTES] = {
+__PH_SPRITE_BITMAP_ICON_TIME__,
+__PH_SPRITE_BITMAP_ICON_SHIELD__,
+__PH_SPRITE_BITMAP_ICON_ROID__
+};
+
+// Character sprites
+// - SPRITE_ICON_BITMAP[X,Y,Z]: X - shape (digits 0-9), Y - shifted bitmap, Z - bitmap bytes
+
+const unsigned char SPRITE_CHAR_BITMAP[SPRITE_CHAR_NUMSHAPES][SPRITE_CHAR_NUMBITMAPSHIFTS][SPRITE_CHAR_NUMBITMAPBYTES] = {
+__PH_SPRITE_BITMAP_DIGIT_0__,
+__PH_SPRITE_BITMAP_DIGIT_1__,
+__PH_SPRITE_BITMAP_DIGIT_2__,
+__PH_SPRITE_BITMAP_DIGIT_3__,
+__PH_SPRITE_BITMAP_DIGIT_4__,
+__PH_SPRITE_BITMAP_DIGIT_5__,
+__PH_SPRITE_BITMAP_DIGIT_6__,
+__PH_SPRITE_BITMAP_DIGIT_7__,
+__PH_SPRITE_BITMAP_DIGIT_8__,
+__PH_SPRITE_BITMAP_DIGIT_9__
+};
+
+// Miscellaneous sprites
+// - SPRITE_GAMEOVER_BITMAP[X,Y,Z]: X - shape (game-over), Y - shifted bitmap, Z - bitmap bytes
+
+const unsigned char SPRITE_GAMEOVER_BITMAP[SPRITE_GAMEOVER_NUMSHAPES][SPRITE_GAMEOVER_NUMBITMAPSHIFTS][SPRITE_GAMEOVER_NUMBITMAPBYTES] = {
+__PH_SPRITE_BITMAP_GAME_OVER__
+};
+
+#endif // __SPRITE_C__
