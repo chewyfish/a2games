@@ -60,7 +60,7 @@ The keyboard or the joystick may be used to play the game.
 | JOY_DOWN or 'v' | Decrease ship speed |
 | JOY_LEFT or 'o' | Rotate ship left |
 | JOY_RIGHT or 'p' | Rotate ship right |
-| JOY_BUTTON or '<space>' | Fire ship missle |
+| JOY_BUTTON or '&lt;space&gt;' | Fire ship missle |
 | 'q' | Quit game |
 
 ### Scoreboard
