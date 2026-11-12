@@ -30,7 +30,7 @@
 
 ## Building
 
-If you wish to merely run the game, skip this section and refer to "Running" below.
+If you wish to merely run the game, skip this section and refer to "Running" below (pre-installed game disk available in repo root directory).
 
 To build program:
 
