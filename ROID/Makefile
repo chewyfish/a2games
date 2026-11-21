@@ -129,7 +129,7 @@ $(SPRITECHDR_GAME_OVER): $(SPRITECHDR)
 $(ROIDSRC_SPRITE_C): $(ROIDSRC_SPRITE_C_TEMPLATE) $(SPRITECHDR_PARSED_FILES)
 	@echo "Creating sprite C file: $@"
 	cp $(ROIDSRC_SPRITE_C_TEMPLATE) $@
-	$(PERLPGM) -0777 -pi -e 's/__PH_SPRITE_BITMAP_SHIP__/`cat $(SPRITECHDR_SHIP)`/eg' $@
+	$(PERLPGM) -pi -e 's/__PH_SPRITE_BITMAP_SHIP__/`cat $(SPRITECHDR_SHIP)`/eg' $@
 	$(PERLPGM) -pi -e 's/__PH_SPRITE_BITMAP_ROID_SMALL__/`cat $(SPRITECHDR_ROID_SMALL)`/eg' $@
 	$(PERLPGM) -pi -e 's/__PH_SPRITE_BITMAP_ROID_MEDIUM__/`cat $(SPRITECHDR_ROID_MEDIUM)`/eg' $@
 	$(PERLPGM) -pi -e 's/__PH_SPRITE_BITMAP_ROID_LARGE__/`cat $(SPRITECHDR_ROID_LARGE)`/eg' $@
@@ -149,7 +149,7 @@ $(ROIDSRC_SPRITE_C): $(ROIDSRC_SPRITE_C_TEMPLATE) $(SPRITECHDR_PARSED_FILES)
 	$(PERLPGM) -pi -e 's/__PH_SPRITE_BITMAP_GAME_OVER__/`cat $(SPRITECHDR_GAME_OVER)`/eg' $@
 
 $(ROIDPGM): $(ROIDDEPS)
-	@echo "Creating asteroids program: $@"
+	@echo "Creating ROIDS program: $@"
 	$(CL65) --cfg-path . --config apple2.cfg -t apple2 -O -Oi --start-addr $(BINSTARTADDR) -vm -m $(ROIDMAP) $(ROIDSRC) -o $@
 
 $(DOS33DISK):
@@ -157,7 +157,7 @@ $(DOS33DISK):
 	$(ACPGM) -dos140 $@
 
 install: $(DOS33DISK) $(ROIDPGM)
-	@echo "Installing asteroids program \"$(ROIDPGM)\" into \"$(DOS33DISK)\""
+	@echo "Installing ROIDS program \"$(ROIDPGM)\" into \"$(DOS33DISK)\""
 	$(ACPGM) -d $(DOS33DISK) $(ROIDDRV)
 	$(ACPGM) -d $(DOS33DISK) $(ROIDPGM)
 	$(ACPGM) -d $(DOS33DISK) $(ROIDDAT0)
